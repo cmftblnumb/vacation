@@ -2,31 +2,34 @@ package ru.netology.javaqa;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ru.netology.javaqa.VacationService;
 
 public class VacationServiceTest {
     @Test
-    public void testCalculateRestMonths_case1() {
-        ru.netology.javaqa.VacationService service = new ru.netology.javaqa.VacationService();
+    public void testCalculate1(){
+        VacationService service = new VacationService();
         int income = 10_000;
-        int expenses = 3_000;
-        int threshold = 20_000;
+        int expences = 3_000;
+        int treshold = 20_000;
 
-        int actual = service.calculateRestMonths(income, expenses, threshold);
+
+        int actual = service.calculate(income, expences, treshold);
         int expected = 3;
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testCalculateRestMonths_case2() {
-        ru.netology.javaqa.VacationService service = new ru.netology.javaqa.VacationService();
+    public void testCalculate2(){
+        VacationService service = new VacationService();
         int income = 100_000;
-        int expenses = 60_000;
-        int threshold = 150_000;
+        int expences = 60_000;
+        int treshold = 150_000;
 
-        int actual = service.calculateRestMonths(income, expenses, threshold);
+        int actual = service.calculate(income, expences, treshold);
         int expected = 2;
 
         Assertions.assertEquals(expected, actual);
+
     }
 }

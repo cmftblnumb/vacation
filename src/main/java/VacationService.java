@@ -1,20 +1,23 @@
 package ru.netology.javaqa;
 
 public class VacationService {
-    public int calculateRestMonths(int income, int expenses, int threshold) {
-        int count = 0;
-        int money = 0;
+    public int calculate(int income, int expenses, int threshold) {
+    int balance = 0;
+    int counter = 0;
 
-        for (int month = 1; month <= 12; month++) {
-            if (money >= threshold) {
-                count++;
-                money -= expenses;
-                money -= money / 3;
+        for (int i = 0; i < 12; i++) {
+            if (balance >= threshold) {
+                // отдых
+                balance -= expenses;
+                balance /= 3;
+                counter++;
             } else {
-                money += income;
-                money -= expenses;
+                //balance = balance + income;
+                balance += income;
+                balance -= expenses;
             }
+
         }
-        return count;
+        return counter;
     }
 }
